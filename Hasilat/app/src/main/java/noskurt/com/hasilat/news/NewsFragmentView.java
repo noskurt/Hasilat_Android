@@ -1,4 +1,4 @@
-package noskurt.com.hasilat;
+package noskurt.com.hasilat.news;
 
 import android.app.Fragment;
 import android.os.AsyncTask;
@@ -23,6 +23,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import noskurt.com.hasilat.R;
 
 public class NewsFragmentView extends Fragment {
 

@@ -12,6 +12,9 @@ import android.support.design.widget.NavigationView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import noskurt.com.hasilat.news.NewsFragmentView;
+import noskurt.com.hasilat.weekly.WeeklyFragmentView;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 

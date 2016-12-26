@@ -1,4 +1,4 @@
-package noskurt.com.hasilat;
+package noskurt.com.hasilat.news;
 
 public class FeedItem {
 
