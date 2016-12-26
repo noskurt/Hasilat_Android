@@ -6,19 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FragmentView extends Fragment {
+public class WeeklyFragmentView extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        int layout_id;
+        if (container != null) container.removeAllViews();
 
-        try {
-            layout_id = getArguments().getInt("idData");
-        } catch (Exception e) {
-            layout_id = R.layout.news_layout;
-        }
+        View view = inflater.inflate(R.layout.weekly_layout, container, false);
 
-        return inflater.inflate(layout_id, container, false);
-
+        return view;
     }
 }

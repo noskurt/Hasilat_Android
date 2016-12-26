@@ -14,7 +14,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.CustomViewHolder>{
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.CustomViewHolder> {
 
     private List<FeedItem> feedItemList;
     private Context context;
@@ -48,6 +48,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public int getItemCount() {
         return (null != feedItemList ? feedItemList.size() : 0);
+    }
+
+    public void clear() {
+        feedItemList.clear();
+        notifyDataSetChanged();
+    }
+
+    public void addAll(List<FeedItem> list) {
+        feedItemList.addAll(list);
+        notifyDataSetChanged();
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
