@@ -12,16 +12,12 @@
             android:title="Haftalık Sıralama" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="İletişim">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_about"
                 android:icon="@android:drawable/ic_menu_info_details"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@android:drawable/ic_menu_info_details"
-                android:title="Send" />
+                android:title="Hakkımızda" />
         </menu>
     </item>
 
