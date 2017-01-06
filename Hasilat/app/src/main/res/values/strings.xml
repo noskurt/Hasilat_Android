@@ -5,6 +5,9 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string name="news_layout_title">Haberler</string>
+    <string name="release_date_layout_title">Vizyon Takvimi</string>
+
     <string name="about_us">
         Emre BOZKURT &amp; Yağız ÜNSAL&#xD;&#xA;
         Anadolu University CENG

@@ -29,7 +29,7 @@ public class NewsOpen extends AppCompatActivity {
         Intent intent = getIntent();
         item = (FeedItem) intent.getSerializableExtra("DATA");
 
-        header.setText(item.getTitle());
+        header.setText(item.getDate() + " - " + item.getTitle());
         content.setText(item.getContent());
 
         Picasso.with(this).load(item.getThumbnail())
