@@ -1,6 +1,7 @@
 package noskurt.com.hasilat.news;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -25,6 +26,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import noskurt.com.hasilat.R;
+import noskurt.com.hasilat.ygznsl.News;
+import noskurt.com.hasilat.ygznsl.NewsCollection;
 
 public class NewsFragmentView extends Fragment {
 
@@ -37,7 +40,7 @@ public class NewsFragmentView extends Fragment {
     private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         if (container != null) container.removeAllViews();
 
@@ -48,8 +51,22 @@ public class NewsFragmentView extends Fragment {
         progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
         swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainer);
 
-        final String url = "http://stacktips.com/?json=get_category_posts&slug=news&count=30";
+        final String url = String.format(getResources().getString(R.string.news_list_url), 1);
         new DownloadTask().execute(url);
+
+        mRecyclerView.addOnItemTouchListener(new RecyclerItemClick(view.getContext(), mRecyclerView, new RecyclerItemClick.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Intent intent = new Intent(view.getContext(), NewsOpen.class);
+                FeedItem item = feedsList.get(position);
+                intent.putExtra("DATA", item);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+            }
+        }));
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -61,10 +78,9 @@ public class NewsFragmentView extends Fragment {
         });
 
         return view;
-
     }
 
-    public class DownloadTask extends AsyncTask<String, Void, Integer> {
+    private class DownloadTask extends AsyncTask<String, Void, Integer> {
         @Override
         protected void onPreExecute() {
             progressBar.setVisibility(View.VISIBLE);
@@ -113,21 +129,22 @@ public class NewsFragmentView extends Fragment {
     }
 
     private void parseResult(String result) {
-
         try {
-            JSONObject response = new JSONObject(result);
-            JSONArray posts = response.optJSONArray("posts");
+            NewsCollection collection = new NewsCollection();
+            News[] news = collection.news();
             feedsList = new ArrayList<>();
 
-            for (int i = 0; i < posts.length(); i++) {
-                JSONObject post = posts.optJSONObject(i);
+            for (int i = 0; i < news.length; i++) {
                 FeedItem item = new FeedItem();
-                item.setTitle(post.optString("title"));
-                item.setThumbnail(post.optString("thumbnail"));
+                item.setContent(news[i].getContent());
+                item.setDate(news[i].getDate());
+                item.setPreview(news[i].getPreviewText());
+                item.setThumbnail(news[i].getImageURL());
+                item.setTitle(news[i].getTitle());
                 feedsList.add(item);
             }
 
-        } catch (JSONException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

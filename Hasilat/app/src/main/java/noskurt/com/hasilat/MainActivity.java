@@ -14,11 +14,11 @@ import android.support.design.widget.NavigationView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import java.util.Arrays;
-import java.util.List;
-
 import noskurt.com.hasilat.news.NewsFragmentView;
+import noskurt.com.hasilat.vision.VisionFragmentView;
 import noskurt.com.hasilat.weekly.WeeklyFragmentView;
+import noskurt.com.hasilat.ygznsl.News;
+import noskurt.com.hasilat.ygznsl.NewsCollection;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
     }
 
     @Override
@@ -58,6 +57,9 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_haberler) {
             NewsFragmentView fragment = new NewsFragmentView();
+            changeFragment(fragment);
+        } else if (id == R.id.nav_vizyon){
+            VisionFragmentView fragment = new VisionFragmentView();
             changeFragment(fragment);
         } else if (id == R.id.nav_haftalik) {
             WeeklyFragmentView fragment = new WeeklyFragmentView();
