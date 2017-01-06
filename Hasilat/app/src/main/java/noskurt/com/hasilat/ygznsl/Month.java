@@ -1,5 +1,5 @@
 
-package com.mobileprogramming.project.ygznsl;
+package noskurt.com.hasilat.ygznsl;
 
 public enum Month {
     JANUARY(1, "Ocak"),

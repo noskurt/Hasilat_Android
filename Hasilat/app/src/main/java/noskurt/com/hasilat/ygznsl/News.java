@@ -1,6 +1,9 @@
 
-package com.mobileprogramming.project.ygznsl;
+package noskurt.com.hasilat.ygznsl;
 
+import android.app.Fragment;
+import android.content.Context;
+import android.content.res.Resources;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.LinkedList;
@@ -9,27 +12,40 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import noskurt.com.hasilat.R;
 
 public final class News implements Serializable {
 
-    private String previewText;
-    private final String title, date, content, imgUrl;
+    private final Resources res;
+    private String previewText, title, date, content, imgUrl;
     private final Predicate<Element> p1 = new Predicate<Element>() {
         @Override
         public boolean test(Element t) {
-            return 
-                    t.text().contains("tıkla") ||
+            return t.text().contains("tıkla") ||
                     t.attr("href").contains("seans") ||
                     t.attr("href").contains("haber-meta");
         }
     };
 
-    public News(String url) throws IOException {
+
+    public News(Fragment fragment, String url) throws IOException {
+        if (fragment == null) throw new NullPointerException();
+        res = fragment.getResources();
+        construct(url);
+    }
+
+    public News(Context context, String url) throws IOException {
+        if (context == null) throw new NullPointerException();
+        res = context.getResources();
+        construct(url);
+    }
+
+    private void construct(String url) throws IOException {
         final Document doc = Jsoup.connect(url).timeout(0).get();
-        final Element newsEl = doc.select("#news-detail > div.solhaberler > div").first();
+        final Element newsEl = doc.select(res.getString(R.string.news_selector)).first();
         date = newsEl.getElementsByClass("habertarih").first().text();
         title = newsEl.getElementsByClass("haberbaslik").first().text();
-        imgUrl = newsEl.select("div.haberresim > img").first().attr("abs:src");
+        imgUrl = newsEl.select(res.getString(R.string.news_img_url_selector)).first().attr("abs:src");
         final LinkedList<Element> selected = new LinkedList<>();
         for (Element el : newsEl.select("div")){
             if (el.className().equals("haberkicerik")){
@@ -47,7 +63,7 @@ public final class News implements Serializable {
         }
         content = str.toString().trim();
     }
-    
+
     public String getTitle() {
         return title;
     }

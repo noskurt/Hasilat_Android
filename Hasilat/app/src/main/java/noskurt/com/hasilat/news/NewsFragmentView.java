@@ -13,18 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-
 import noskurt.com.hasilat.R;
 import noskurt.com.hasilat.ygznsl.News;
 import noskurt.com.hasilat.ygznsl.NewsCollection;
@@ -130,17 +124,16 @@ public class NewsFragmentView extends Fragment {
 
     private void parseResult(String result) {
         try {
-            NewsCollection collection = new NewsCollection();
-            News[] news = collection.news();
+            NewsCollection collection = new NewsCollection(this);
             feedsList = new ArrayList<>();
 
-            for (int i = 0; i < news.length; i++) {
+            for (News news : collection){
                 FeedItem item = new FeedItem();
-                item.setContent(news[i].getContent());
-                item.setDate(news[i].getDate());
-                item.setPreview(news[i].getPreviewText());
-                item.setThumbnail(news[i].getImageURL());
-                item.setTitle(news[i].getTitle());
+                item.setContent(news.getContent());
+                item.setDate(news.getDate());
+                item.setPreview(news.getPreviewText());
+                item.setThumbnail(news.getImageURL());
+                item.setTitle(news.getTitle());
                 feedsList.add(item);
             }
 

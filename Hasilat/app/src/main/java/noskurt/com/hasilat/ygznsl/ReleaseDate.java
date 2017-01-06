@@ -1,6 +1,8 @@
 
-package com.mobileprogramming.project.ygznsl;
+package noskurt.com.hasilat.ygznsl;
 
+import android.content.Context;
+import android.content.res.Resources;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Calendar;
@@ -11,25 +13,29 @@ import java.util.TreeMap;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import noskurt.com.hasilat.R;
 
 public class ReleaseDate implements Serializable, Iterable<ReleaseWeek> {
 
     private final LinkedList<ReleaseWeek> weeks = new LinkedList<>();
+    private final Resources res;
     private final int year, month;
     private final String url;
     
-    public ReleaseDate(int year, int month) throws IOException {
+    public ReleaseDate(Context context, int year, int month) throws IOException {
+        if (context == null) throw new NullPointerException();
+        res = context.getResources();
         if (month < 1 || month > 12) throw new IllegalArgumentException();
         if (year < 2005 || year > (Calendar.getInstance().get(Calendar.YEAR) + 2)) throw new IllegalArgumentException();
         this.year = year;
         this.month = month;
-        url = String.format("http://boxofficeturkiye.com/vizyon/?yil=%d&ay=%d", year, month);
+        url = String.format(res.getString(R.string.release_date_url), year, month);
         read();
     }
     
     public final void read() throws IOException{
         final Document document = Jsoup.connect(url).timeout(0).get();
-        final Element elWeeks = document.select("#right > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td > table.navkutu > tbody > tr > td > table:nth-child(5) > tbody > tr > td > table > tbody > tr:nth-child(2) > td").first();
+        final Element elWeeks = document.select(res.getString(R.string.release_date_weeks_selector)).first();
         for (Element el : elWeeks.select("table")){
             weeks.add(new ReleaseWeek(el, year, month));
         }

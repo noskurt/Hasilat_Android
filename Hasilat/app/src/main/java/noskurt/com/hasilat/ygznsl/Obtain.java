@@ -1,4 +1,4 @@
-package com.mobileprogramming.project.ygznsl;
+package noskurt.com.hasilat.ygznsl;
 
 import java.io.IOException;
 import java.util.Collection;
