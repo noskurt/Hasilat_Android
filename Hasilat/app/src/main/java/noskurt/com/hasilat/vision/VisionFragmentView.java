@@ -16,6 +16,7 @@ public class VisionFragmentView extends Fragment {
 
         View view = inflater.inflate(R.layout.vision_layout, container, false);
 
+        
 
         return view;
     }

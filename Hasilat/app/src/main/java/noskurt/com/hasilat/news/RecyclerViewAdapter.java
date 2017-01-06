@@ -44,7 +44,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     .into(holder.thumbnail);
         }
 
-        holder.title.setText(feedItem.getTitle());
+        holder.title.setText(feedItem.getDate() + " - " + feedItem.getTitle());
         holder.content.setText(feedItem.getPreview());
     }
 
