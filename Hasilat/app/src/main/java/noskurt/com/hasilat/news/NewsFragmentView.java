@@ -80,7 +80,7 @@ public class NewsFragmentView extends Fragment {
         return view;
     }
 
-    public class DownloadTask extends AsyncTask<String, Void, Integer> {
+    private class DownloadTask extends AsyncTask<String, Void, Integer> {
         @Override
         protected void onPreExecute() {
             progressBar.setVisibility(View.VISIBLE);

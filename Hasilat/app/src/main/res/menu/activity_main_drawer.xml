@@ -7,10 +7,39 @@
             android:icon="@android:drawable/ic_menu_info_details"
             android:title="Haberler" />
         <item
-            android:id="@+id/nav_haftalik"
+            android:id="@+id/nav_vizyon"
             android:icon="@android:drawable/ic_menu_info_details"
-            android:title="Haftalık Sıralama" />
+            android:title="Vizyon Takvimi" />
     </group>
+
+    <item android:title="Sıralamalar">
+        <menu>
+            <item
+                android:id="@+id/nav_haftalik"
+                android:icon="@android:drawable/ic_menu_info_details"
+                android:title="Haftalık" />
+            <item
+                android:id="@+id/nav_yillik"
+                android:icon="@android:drawable/ic_menu_info_details"
+                android:title="Yıllık" />
+            <item
+                android:id="@+id/nav_turk"
+                android:icon="@android:drawable/ic_menu_info_details"
+                android:title="Türk Filmleri" />
+            <item
+                android:id="@+id/nav_dagitim"
+                android:icon="@android:drawable/ic_menu_info_details"
+                android:title="Dağıtımcılar" />
+            <item
+                android:id="@+id/nav_studyo"
+                android:icon="@android:drawable/ic_menu_info_details"
+                android:title="Stüdyolar" />
+            <item
+                android:id="@+id/nav_tumzaman"
+                android:icon="@android:drawable/ic_menu_info_details"
+                android:title="Tüm Zamanlar" />
+        </menu>
+    </item>
 
     <item android:title="İletişim">
         <menu>
