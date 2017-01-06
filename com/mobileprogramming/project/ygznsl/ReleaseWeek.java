@@ -2,9 +2,7 @@
 package com.mobileprogramming.project.ygznsl;
 
 import java.io.Serializable;
-import java.time.Instant;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -24,9 +22,7 @@ public class ReleaseWeek implements Serializable, Iterable<Movie> {
         if (!root.nodeName().equals("table")) throw new IllegalArgumentException();
         this.root = root.select("tbody").first();
         if (month < 1 || month > 12) throw new IllegalArgumentException();
-        final Calendar cal = Calendar.getInstance();
-        cal.setTime(Date.from(Instant.now()));
-        if (year < 2005 || year > (cal.get(Calendar.YEAR) + 2)) throw new IllegalArgumentException();
+        if (year < 2005 || year > (Calendar.getInstance().get(Calendar.YEAR) + 2)) throw new IllegalArgumentException();
         this.year = year;
         this.month = month;
         read();

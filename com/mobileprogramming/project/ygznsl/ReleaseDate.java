@@ -3,9 +3,7 @@ package com.mobileprogramming.project.ygznsl;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.time.Instant;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -22,9 +20,7 @@ public class ReleaseDate implements Serializable, Iterable<ReleaseWeek> {
     
     public ReleaseDate(int year, int month) throws IOException {
         if (month < 1 || month > 12) throw new IllegalArgumentException();
-        final Calendar cal = Calendar.getInstance();
-        cal.setTime(Date.from(Instant.now()));
-        if (year < 2005 || year > (cal.get(Calendar.YEAR) + 2)) throw new IllegalArgumentException();
+        if (year < 2005 || year > (Calendar.getInstance().get(Calendar.YEAR) + 2)) throw new IllegalArgumentException();
         this.year = year;
         this.month = month;
         url = String.format("http://boxofficeturkiye.com/vizyon/?yil=%d&ay=%d", year, month);
