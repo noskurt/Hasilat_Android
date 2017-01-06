@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -28,6 +29,7 @@ public class WeeklyFragmentView extends Fragment {
 
     private Spinner spinner;
     private TableLayout tableLayout;
+    private ProgressBar progressBar;
 
     private HtmlTable table;
 
@@ -41,6 +43,7 @@ public class WeeklyFragmentView extends Fragment {
         view = inflater.inflate(R.layout.weekly_layout, container, false);
 
         tableLayout = (TableLayout) view.findViewById(R.id.table_layout);
+        progressBar = (ProgressBar) view.findViewById(R.id.weeklyProgress);
 
         spinner = (Spinner) view.findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(view.getContext(),
@@ -51,6 +54,10 @@ public class WeeklyFragmentView extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                for (int a = 1; a < tableLayout.getChildCount(); a++) {
+                    View child = tableLayout.getChildAt(a);
+                    if (child instanceof TableRow) ((ViewGroup) child).removeAllViews();
+                }
                 new DownloadTask().execute(adapterView.getSelectedItem().toString());
             }
 
@@ -63,6 +70,11 @@ public class WeeklyFragmentView extends Fragment {
     }
 
     private class DownloadTask extends AsyncTask<String, Void, Integer> {
+        @Override
+        protected void onPreExecute() {
+            progressBar.setVisibility(View.VISIBLE);
+        }
+
         @Override
         protected Integer doInBackground(String... strings) {
             Integer result = 0;
@@ -80,6 +92,8 @@ public class WeeklyFragmentView extends Fragment {
 
         @Override
         protected void onPostExecute(Integer result) {
+            progressBar.setVisibility(View.INVISIBLE);
+
             if (result == 1) {
                 for (int j = 0; j < table.size(); j++) {
                     TableRow tableRow = new TableRow(view.getContext());
