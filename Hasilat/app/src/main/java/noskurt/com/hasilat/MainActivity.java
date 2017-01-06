@@ -14,9 +14,6 @@ import android.support.design.widget.NavigationView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import java.util.Arrays;
-import java.util.List;
-
 import noskurt.com.hasilat.news.NewsFragmentView;
 import noskurt.com.hasilat.weekly.WeeklyFragmentView;
 
@@ -38,7 +35,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
     }
 
     @Override
