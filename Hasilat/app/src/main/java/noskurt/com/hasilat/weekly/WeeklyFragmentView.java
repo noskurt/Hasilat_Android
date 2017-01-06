@@ -62,10 +62,6 @@ public class WeeklyFragmentView extends Fragment {
         return view;
     }
 
-    private void btnChangeColor(){
-
-    }
-
     private void createList() {
         rowList = new ArrayList<>();
         list = new ArrayList<>();

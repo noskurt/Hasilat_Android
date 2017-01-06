@@ -41,10 +41,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             Picasso.with(context).load(feedItem.getThumbnail())
                     .error(R.drawable.placeholder)
                     .placeholder(R.drawable.placeholder)
-                    .into(holder.imageView);
+                    .into(holder.thumbnail);
         }
 
-        holder.textView.setText(Html.fromHtml(feedItem.getTitle()));
+        holder.title.setText(feedItem.getTitle());
+        holder.content.setText(feedItem.getPreview());
     }
 
     @Override
@@ -63,13 +64,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
-        protected ImageView imageView;
-        protected TextView textView;
+        protected ImageView thumbnail;
+        protected TextView title;
+        protected TextView content;
 
         public CustomViewHolder(View itemView) {
             super(itemView);
-            this.imageView = (ImageView) itemView.findViewById(R.id.thumbnail);
-            this.textView = (TextView) itemView.findViewById(R.id.title);
+            this.thumbnail = (ImageView) itemView.findViewById(R.id.thumbnail);
+            this.title = (TextView) itemView.findViewById(R.id.title);
+            this.content = (TextView) itemView.findViewById(R.id.content);
         }
     }
 }

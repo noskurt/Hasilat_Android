@@ -16,6 +16,8 @@ import android.view.MenuItem;
 
 import noskurt.com.hasilat.news.NewsFragmentView;
 import noskurt.com.hasilat.weekly.WeeklyFragmentView;
+import noskurt.com.hasilat.ygznsl.News;
+import noskurt.com.hasilat.ygznsl.NewsCollection;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
