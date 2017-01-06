@@ -1,5 +1,5 @@
 
-package noskurt.com.hasilat.ygznsl;
+package com.mobileprogramming.project.ygznsl;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
@@ -9,7 +9,7 @@ public class Movie implements Serializable, Comparable<Movie> {
 
     private String name, imgUrl, genre;
     private Calendar releaseDate;
-
+    
     public String getName() {
         return name;
     }

@@ -1,11 +1,10 @@
 
-package noskurt.com.hasilat.ygznsl;
+package com.mobileprogramming.project.ygznsl;
 
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Objects;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -18,10 +17,10 @@ public final class News implements Serializable {
     private final Predicate<Element> p1 = new Predicate<Element>() {
         @Override
         public boolean test(Element t) {
-            return
+            return 
                     t.text().contains("tıkla") ||
-                            t.attr("href").contains("seans") ||
-                            t.attr("href").contains("haber-meta");
+                    t.attr("href").contains("seans") ||
+                    t.attr("href").contains("haber-meta");
         }
     };
 
@@ -32,8 +31,8 @@ public final class News implements Serializable {
         title = newsEl.getElementsByClass("haberbaslik").first().text();
         imgUrl = newsEl.select("div.haberresim > img").first().attr("abs:src");
         final LinkedList<Element> selected = new LinkedList<>();
-        for (Element el : newsEl.select("div")) {
-            if (el.className().equals("haberkicerik")) {
+        for (Element el : newsEl.select("div")){
+            if (el.className().equals("haberkicerik")){
                 if (el.select("iframe").isEmpty()) {
                     final Elements els = el.select("a");
                     if (Obtain.noneMatch(els, p1)) {
@@ -43,12 +42,12 @@ public final class News implements Serializable {
             }
         }
         final StringBuilder str = new StringBuilder();
-        for (Element el : selected) {
+        for (Element el : selected){
             str.append(el.text()).append("\r\n");
         }
         content = str.toString().trim();
     }
-
+    
     public String getTitle() {
         return title;
     }
@@ -60,11 +59,11 @@ public final class News implements Serializable {
     public String getDate() {
         return date;
     }
-
-    public String getImageURL() {
+    
+    public String getImageURL(){
         return imgUrl;
     }
-
+    
     public String getPreviewText() {
         return previewText;
     }
