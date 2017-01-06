@@ -113,13 +113,4 @@ public class ReleaseDateView extends Fragment {
         }
     }
 
-    private void showMessageDialog(String content){
-        AlertDialog.Builder dlgAlert = new AlertDialog.Builder(context);
-        dlgAlert.setMessage(content);
-        dlgAlert.setTitle("Bilgi");
-        dlgAlert.setPositiveButton("Tamam", null);
-        dlgAlert.setCancelable(true);
-        dlgAlert.create().show();
-    }
-
 }

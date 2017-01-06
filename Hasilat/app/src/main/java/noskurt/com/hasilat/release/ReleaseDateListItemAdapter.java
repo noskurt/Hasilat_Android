@@ -59,22 +59,4 @@ public class ReleaseDateListItemAdapter extends ArrayAdapter<Movie> {
         return new ReleaseDateListItemAdapter(c, 0, new LinkedList<Movie>());
     }
 
-    // From Stack Overflow... http://stackoverflow.com/questions/1661293/why-do-listview-items-not-grow-to-wrap-their-content
-    public static void setListViewHeightBasedOnChildren(ListView listView) {
-        final ListAdapter listAdapter = listView.getAdapter();
-        if (listAdapter == null) return;
-
-        int totalHeight = 0;
-        for (int i = 0; i < listAdapter.getCount(); i++) {
-            View listItem = listAdapter.getView(i, null, listView);
-            listItem.measure(0, 0);
-            totalHeight += listItem.getMeasuredHeight();
-        }
-
-        final ViewGroup.LayoutParams params = listView.getLayoutParams();
-        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
-        listView.setLayoutParams(params);
-        listView.requestLayout();
-    }
-
 }
