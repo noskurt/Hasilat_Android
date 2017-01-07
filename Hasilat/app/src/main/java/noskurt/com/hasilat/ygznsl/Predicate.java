@@ -1,4 +1,3 @@
-
 package noskurt.com.hasilat.ygznsl;
 
 public interface Predicate<T> {

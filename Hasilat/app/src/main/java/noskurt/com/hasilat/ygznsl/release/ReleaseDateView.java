@@ -11,9 +11,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.LinkedList;
+
 import noskurt.com.hasilat.R;
 import noskurt.com.hasilat.ygznsl.Month;
 import noskurt.com.hasilat.ygznsl.Movie;
@@ -41,11 +43,15 @@ public class ReleaseDateView extends Fragment {
 
         final LinkedList<String> years = new LinkedList<>(Arrays.asList("Yıl seçiniz"));
         for (int i = Calendar.getInstance().get(Calendar.YEAR) + 1; i > 2004; i--) years.add("" + i);
-        spinnerYear.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, years));
+        ArrayAdapter<String> adapterYear = new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, years);
+        adapterYear.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerYear.setAdapter(adapterYear);
 
         final LinkedList<String> months = new LinkedList<>(Arrays.asList("Ay seçiniz"));
         for (Month month : Month.values()) months.add(month.getName());
-        spinnerMonth.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, months));
+        ArrayAdapter<String> adapterMonth = new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, months);
+        adapterMonth.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerMonth.setAdapter(adapterMonth);
 
         spinnerYear.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -110,5 +116,4 @@ public class ReleaseDateView extends Fragment {
             task.execute(url);
         }
     }
-
 }

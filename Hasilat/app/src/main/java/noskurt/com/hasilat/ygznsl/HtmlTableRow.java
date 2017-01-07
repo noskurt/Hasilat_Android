@@ -1,65 +1,65 @@
-
 package noskurt.com.hasilat.ygznsl;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
+
 import org.jsoup.nodes.Element;
 
 public final class HtmlTableRow implements Serializable, Iterable<Element> {
 
     private final ArrayList<Element> row = new ArrayList<>();
-    
-    public Element[] elements(){
+
+    public Element[] elements() {
         Element[] array = new Element[row.size()];
         row.toArray(array);
         return array;
     }
-    
-    public Element get(int index){
+
+    public Element get(int index) {
         return row.get(index);
     }
-    
-    public void set(int index, Element el){
+
+    public void set(int index, Element el) {
         row.set(index, el);
     }
-    
-    public void add(Element el){
+
+    public void add(Element el) {
         row.add(el);
     }
-    
-    public void add(int index, Element el){
+
+    public void add(int index, Element el) {
         row.add(index, el);
     }
-    
-    public boolean contains(Element o){
+
+    public boolean contains(Element o) {
         return row.contains(o);
     }
-    
-    public void clear(){
+
+    public void clear() {
         row.clear();
     }
-    
-    public int indexOf(Element el){
+
+    public int indexOf(Element el) {
         return row.indexOf(el);
     }
-    
-    public int lastIndexOf(Element el){
+
+    public int lastIndexOf(Element el) {
         return row.lastIndexOf(el);
     }
-    
-    public boolean remove(Element el){
+
+    public boolean remove(Element el) {
         return row.remove(el);
     }
-    
-    public Element remove(int index){
+
+    public Element remove(int index) {
         return row.remove(index);
     }
-    
-    public int size(){
+
+    public int size() {
         return row.size();
     }
-    
+
     @Override
     public String toString() {
         final StringBuilder str = new StringBuilder(row.get(0).text());

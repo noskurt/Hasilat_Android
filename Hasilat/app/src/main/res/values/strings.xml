@@ -43,24 +43,24 @@
         <item>Romantik-Komedi Filmleri</item>
     </string-array>
 
-    <string formatted="false" name="release_date_url">http://boxofficeturkiye.com/vizyon/?yil=%d&amp;ay=%d</string>
+    <string name="release_date_url" formatted="false">http://boxofficeturkiye.com/vizyon/?yil=%d&amp;ay=%d</string>
     <string name="release_date_weeks_selector">#right > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td > table.navkutu > tbody > tr > td > table:nth-child(5) > tbody > tr > td > table > tbody > tr:nth-child(2) > td</string>
-    <string formatted="false" name="news_list_url">http://boxofficeturkiye.com/haberler/%d</string>
+    <string name="news_list_url" formatted="false">http://boxofficeturkiye.com/haberler/%d</string>
     <string name="news_list_table_selector">#right > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td > div.solhaberler</string>
     <string name="news_preview_selector">div.haberliste</string>
     <string name="news_preview_text_selector">div.haberkicerik</string>
     <string name="news_url_selector">div.haberbaslik > a</string>
     <string name="news_selector">#news-detail > div.solhaberler > div</string>
     <string name="news_img_url_selector">div.haberresim > img</string>
-    <string formatted="false" name="distributors_url">http://boxofficeturkiye.com/dagitimcilar/%d</string>
+    <string name="distributors_url" formatted="false">http://boxofficeturkiye.com/dagitimcilar/%d</string>
     <string name="distributors_table_selector">#tabBoxOffice > table > tbody</string>
-    <string formatted="false" name="studios_url">http://boxofficeturkiye.com/studyolar/%d</string>
+    <string name="studios_url" formatted="false">http://boxofficeturkiye.com/studyolar/%d</string>
     <string name="studios_table_selector">#tabBoxOffice > table > tbody</string>
-    <string formatted="false" name="weekly_url">http://boxofficeturkiye.com/hafta/?haftaop=ilkhafta&amp;yil=%d</string>
+    <string name="weekly_url" formatted="false">http://boxofficeturkiye.com/hafta/?haftaop=ilkhafta&amp;yil=%d</string>
     <string name="weekly_table_selector">#right > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td > table:nth-child(3) > tbody > tr > td > table > tbody > tr:nth-child(2) > td > table > tbody</string>
-    <string formatted="false" name="annual_url">http://boxofficeturkiye.com/yillik/?yilop=tum&amp;yil=%d</string>
+    <string name="annual_url" formatted="false">http://boxofficeturkiye.com/yillik/?yilop=tum&amp;yil=%d</string>
     <string name="annual_table_selector">#right > table > tbody > tr > td > table > tbody > tr:nth-child(3) > td > table:nth-child(3) > tbody > tr > td > table > tbody > tr > td > table:nth-child(5) > tbody</string>
-    <string formatted="false" name="turkish_movies_url">http://boxofficeturkiye.com/turk-filmleri/?yilop=tum&amp;yil=%d</string>
+    <string name="turkish_movies_url" formatted="false">http://boxofficeturkiye.com/turk-filmleri/?yilop=tum&amp;yil=%d</string>
     <string name="turkish_movies_table_selector">#right > table > tbody > tr > td > table > tbody > tr:nth-child(3) > td > table:nth-child(3) > tbody > tr > td > table > tbody > tr > td > table:nth-child(5) > tbody</string>
     <string name="all_time_all_movies_url">http://boxofficeturkiye.com/tumzaman/?tm=1989</string>
     <string name="all_time_all_movies_table_selector">#right > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td > table > tbody</string>

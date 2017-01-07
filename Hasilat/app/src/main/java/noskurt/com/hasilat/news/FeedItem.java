@@ -2,7 +2,7 @@ package noskurt.com.hasilat.news;
 
 import java.io.Serializable;
 
-public class FeedItem implements Serializable{
+public class FeedItem implements Serializable {
 
     private String title;
     private String preview;

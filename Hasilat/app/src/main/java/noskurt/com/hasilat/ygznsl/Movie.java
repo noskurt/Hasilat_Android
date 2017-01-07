@@ -1,4 +1,3 @@
-
 package noskurt.com.hasilat.ygznsl;
 
 import java.io.Serializable;
@@ -9,7 +8,7 @@ public class Movie implements Serializable, Comparable<Movie> {
 
     private String name, imgUrl, genre;
     private Calendar releaseDate;
-    
+
     public String getName() {
         return name;
     }

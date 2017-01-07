@@ -1,4 +1,3 @@
-
 package noskurt.com.hasilat.ygznsl;
 
 public enum Month {
@@ -17,14 +16,18 @@ public enum Month {
 
     private final int value;
     private final String name;
-    
+
     Month(int value, String name) {
         this.value = value;
         this.name = name;
     }
 
-    public int value() { return value; }
+    public int value() {
+        return value;
+    }
 
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
 
 }

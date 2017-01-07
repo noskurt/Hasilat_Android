@@ -13,33 +13,34 @@
             android:id="@+id/txtTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:gravity="center"
             android:text="@string/release_date_layout_title"
             android:textSize="25sp"
             android:textStyle="bold" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_gravity="center"
             android:orientation="horizontal">
 
             <Spinner
                 android:id="@+id/spinnerYear"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:layout_weight="0.5">
+                android:layout_weight="0.5"
+                android:gravity="center">
 
             </Spinner>
 
             <Spinner
                 android:id="@+id/spinnerMonth"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:layout_weight="0.5">
+                android:layout_weight="0.5"
+                android:gravity="center">
 
             </Spinner>
 

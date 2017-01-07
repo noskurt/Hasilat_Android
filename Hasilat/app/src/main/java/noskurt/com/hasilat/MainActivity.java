@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+
 import noskurt.com.hasilat.alltime.AlltimeFragmentView;
 import noskurt.com.hasilat.distributors.DistributorsFragmentView;
 import noskurt.com.hasilat.news.NewsFragmentView;
@@ -23,7 +24,8 @@ import noskurt.com.hasilat.turkish.TurkishFragmentView;
 import noskurt.com.hasilat.weekly.WeeklyFragmentView;
 import noskurt.com.hasilat.annual.AnnualFragmentView;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +53,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+        if (drawer.isDrawerOpen(GravityCompat.START)) drawer.closeDrawer(GravityCompat.START);
+        else super.onBackPressed();
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

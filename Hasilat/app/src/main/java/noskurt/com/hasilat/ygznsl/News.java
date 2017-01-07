@@ -1,17 +1,19 @@
-
 package noskurt.com.hasilat.ygznsl;
 
 import android.app.Fragment;
 import android.content.Context;
 import android.content.res.Resources;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Objects;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
 import noskurt.com.hasilat.R;
 
 public final class News implements Serializable {
@@ -47,8 +49,8 @@ public final class News implements Serializable {
         title = newsEl.getElementsByClass("haberbaslik").first().text();
         imgUrl = newsEl.select(res.getString(R.string.news_img_url_selector)).first().attr("abs:src");
         final LinkedList<Element> selected = new LinkedList<>();
-        for (Element el : newsEl.select("div")){
-            if (el.className().equals("haberkicerik")){
+        for (Element el : newsEl.select("div")) {
+            if (el.className().equals("haberkicerik")) {
                 if (el.select("iframe").isEmpty()) {
                     final Elements els = el.select("a");
                     if (Obtain.noneMatch(els, p1)) {
@@ -58,7 +60,7 @@ public final class News implements Serializable {
             }
         }
         final StringBuilder str = new StringBuilder();
-        for (Element el : selected){
+        for (Element el : selected) {
             str.append(el.text()).append("\r\n");
         }
         content = str.toString().trim();
@@ -75,11 +77,11 @@ public final class News implements Serializable {
     public String getDate() {
         return date;
     }
-    
-    public String getImageURL(){
+
+    public String getImageURL() {
         return imgUrl;
     }
-    
+
     public String getPreviewText() {
         return previewText;
     }
@@ -118,5 +120,4 @@ public final class News implements Serializable {
         }
         return true;
     }
-
 }

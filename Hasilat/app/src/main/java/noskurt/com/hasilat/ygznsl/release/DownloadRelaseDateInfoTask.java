@@ -5,7 +5,9 @@ import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.ProgressBar;
+
 import java.io.IOException;
+
 import noskurt.com.hasilat.ygznsl.ReleaseDate;
 
 public class DownloadRelaseDateInfoTask extends AsyncTask<String, Void, ReleaseDate> {
@@ -15,7 +17,7 @@ public class DownloadRelaseDateInfoTask extends AsyncTask<String, Void, ReleaseD
     private final Context context;
     private final int year, month;
 
-    public DownloadRelaseDateInfoTask(Context context, int year, int month, ReleaseDateUpdate update){
+    public DownloadRelaseDateInfoTask(Context context, int year, int month, ReleaseDateUpdate update) {
         this.context = context;
         this.year = year;
         this.month = month;
@@ -32,7 +34,7 @@ public class DownloadRelaseDateInfoTask extends AsyncTask<String, Void, ReleaseD
         ReleaseDate rd = null;
         try {
             rd = new ReleaseDate(context, year, month);
-        } catch (IOException ioEx){
+        } catch (IOException ioEx) {
             AlertDialog.Builder dlgAlert = new AlertDialog.Builder(context);
             dlgAlert.setMessage(ioEx.getMessage());
             dlgAlert.setTitle("Hata");

@@ -3,11 +3,11 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="15dp"
+    android:orientation="horizontal"
     android:paddingBottom="15dp"
     android:paddingLeft="5dp"
     android:paddingRight="5dp"
-    android:orientation="horizontal">
+    android:paddingTop="15dp">
 
     <ImageView
         android:id="@+id/imgMovie"
@@ -17,39 +17,39 @@
 
     <LinearLayout
         android:id="@+id/layoutForTextViews"
-        android:orientation="vertical"
-        android:gravity="center_vertical"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="0.6" >
+        android:layout_weight="0.6"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/txtReleaseDate"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:gravity="center_vertical"
-            android:layout_margin="5dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/txtName"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginBottom="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/txtGenre"
-            android:textSize="13sp"
-            android:textColor="@android:color/black"
-            android:layout_margin="5dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textColor="@android:color/black"
+            android:textSize="13sp" />
 
     </LinearLayout>
 

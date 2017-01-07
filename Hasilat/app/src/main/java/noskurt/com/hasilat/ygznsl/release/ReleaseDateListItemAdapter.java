@@ -9,11 +9,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.squareup.picasso.Picasso;
+
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
+
 import noskurt.com.hasilat.R;
 import noskurt.com.hasilat.ygznsl.Movie;
 
@@ -53,8 +56,7 @@ public class ReleaseDateListItemAdapter extends ArrayAdapter<Movie> {
         return row;
     }
 
-    public static ReleaseDateListItemAdapter empty(Context c){
+    public static ReleaseDateListItemAdapter empty(Context c) {
         return new ReleaseDateListItemAdapter(c, 0, new LinkedList<Movie>());
     }
-
 }

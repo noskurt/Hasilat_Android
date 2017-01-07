@@ -13,12 +13,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
 import noskurt.com.hasilat.R;
 import noskurt.com.hasilat.ygznsl.News;
 import noskurt.com.hasilat.ygznsl.NewsCollection;
@@ -129,7 +131,7 @@ public class NewsFragmentView extends Fragment {
             NewsCollection collection = new NewsCollection(this);
             feedsList = new ArrayList<>();
 
-            for (News news : collection){
+            for (News news : collection) {
                 FeedItem item = new FeedItem();
                 item.setContent(news.getContent());
                 item.setDate(news.getDate());
