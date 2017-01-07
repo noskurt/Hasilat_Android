@@ -22,6 +22,7 @@
 
         <activity
             android:name=".MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity android:name=".news.NewsOpen" />
