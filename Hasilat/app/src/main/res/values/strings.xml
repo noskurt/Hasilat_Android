@@ -28,6 +28,21 @@
         <item>2005</item>
     </string-array>
 
+    <string-array name="alltime">
+        <item>Tüm Filmler</item>
+        <item>Türk Filmleri</item>
+        <item>Aksiyon Filmleri</item>
+        <item>Aşk Filmleri</item>
+        <item>Bilim-Kurgu Filmleri</item>
+        <item>Çizgi Film Filmleri</item>
+        <item>Dram Filmleri</item>
+        <item>Gerilim Filmleri</item>
+        <item>Komedi Filmleri</item>
+        <item>Korku Filmleri</item>
+        <item>Macera Filmleri</item>
+        <item>Romantik-Komedi Filmleri</item>
+    </string-array>
+
     <string formatted="false" name="release_date_url">http://boxofficeturkiye.com/vizyon/?yil=%d&amp;ay=%d</string>
     <string name="release_date_weeks_selector">#right > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td > table.navkutu > tbody > tr > td > table:nth-child(5) > tbody > tr > td > table > tbody > tr:nth-child(2) > td</string>
     <string formatted="false" name="news_list_url">http://boxofficeturkiye.com/haberler/%d</string>

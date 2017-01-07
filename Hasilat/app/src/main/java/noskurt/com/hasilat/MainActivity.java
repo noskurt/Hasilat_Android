@@ -14,11 +14,14 @@ import android.support.design.widget.NavigationView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import noskurt.com.hasilat.alltime.AlltimeFragmentView;
 import noskurt.com.hasilat.distributors.DistributorsFragmentView;
 import noskurt.com.hasilat.news.NewsFragmentView;
 import noskurt.com.hasilat.release.ReleaseDateView;
 import noskurt.com.hasilat.studios.StudiosFragmentView;
+import noskurt.com.hasilat.turkish.TurkishFragmentView;
 import noskurt.com.hasilat.weekly.WeeklyFragmentView;
+import noskurt.com.hasilat.yearly.YearlyFragmentView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -43,11 +46,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+        if (drawer.isDrawerOpen(GravityCompat.START)) drawer.closeDrawer(GravityCompat.START);
+        else super.onBackPressed();
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -64,13 +64,22 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_haftalik) {
             WeeklyFragmentView fragment = new WeeklyFragmentView();
             changeFragment(fragment);
+        } else if (id == R.id.nav_yillik) {
+            YearlyFragmentView fragment = new YearlyFragmentView();
+            changeFragment(fragment);
+        } else if (id == R.id.nav_turk) {
+            TurkishFragmentView fragment = new TurkishFragmentView();
+            changeFragment(fragment);
         } else if (id == R.id.nav_dagitim) {
             DistributorsFragmentView fragment = new DistributorsFragmentView();
             changeFragment(fragment);
-        } else if (id == R.id.nav_studyo){
+        } else if (id == R.id.nav_studyo) {
             StudiosFragmentView fragment = new StudiosFragmentView();
             changeFragment(fragment);
-        } else if (id == R.id.nav_about) {
+        } else if (id == R.id.nav_tumzaman) {
+            AlltimeFragmentView fragment = new AlltimeFragmentView();
+            changeFragment(fragment);
+        } else {
             aboutUsAlert();
         }
 
