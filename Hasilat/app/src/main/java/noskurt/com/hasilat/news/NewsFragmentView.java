@@ -33,12 +33,14 @@ public class NewsFragmentView extends Fragment {
     private ProgressBar progressBar;
     private SwipeRefreshLayout swipeRefreshLayout;
 
+    private View view;
+
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         if (container != null) container.removeAllViews();
 
-        View view = inflater.inflate(R.layout.news_layout, container, false);
+        view = inflater.inflate(R.layout.news_layout, container, false);
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
@@ -114,7 +116,7 @@ public class NewsFragmentView extends Fragment {
             progressBar.setVisibility(View.GONE);
 
             if (result == 1) {
-                adapter = new RecyclerViewAdapter(getContext(), feedsList);
+                adapter = new RecyclerViewAdapter(view.getContext(), feedsList);
                 mRecyclerView.setAdapter(adapter);
             } else {
                 Toast.makeText(getContext(), "Failed to fetch data!", Toast.LENGTH_SHORT).show();

@@ -40,7 +40,7 @@ public class ReleaseDateView extends Fragment {
         progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
 
         final LinkedList<String> years = new LinkedList<>(Arrays.asList("Yıl seçiniz"));
-        for (int i = Calendar.getInstance().get(Calendar.YEAR) + 1; i > 2004 ; i--) years.add("" + i);
+        for (int i = Calendar.getInstance().get(Calendar.YEAR) + 1; i > 2004; i--) years.add("" + i);
         spinnerYear.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, years));
 
         final LinkedList<String> months = new LinkedList<>(Arrays.asList("Ay seçiniz"));
@@ -76,7 +76,7 @@ public class ReleaseDateView extends Fragment {
         return view;
     }
 
-    private void reloadListView(){
+    private void reloadListView() {
         if (year == 0 || month == 0) {
             lstMovies.setAdapter(ReleaseDateListItemAdapter.empty(context));
         } else {
@@ -89,12 +89,12 @@ public class ReleaseDateView extends Fragment {
                     ReleaseDateView.this.getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            if (rd2 == null){
+                            if (rd2 == null) {
                                 lstMovies.setAdapter(ReleaseDateListItemAdapter.empty(context));
                             } else {
                                 final LinkedList<Movie> movies = new LinkedList<>();
-                                for (ReleaseWeek rw : rd2.getWeeks()){
-                                    for (Movie m : rw.getMovies()){
+                                for (ReleaseWeek rw : rd2.getWeeks()) {
+                                    for (Movie m : rw.getMovies()) {
                                         movies.add(m);
                                     }
                                 }
