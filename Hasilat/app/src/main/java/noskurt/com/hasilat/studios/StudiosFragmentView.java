@@ -1,7 +1,6 @@
-package noskurt.com.hasilat.weekly;
+package noskurt.com.hasilat.studios;
 
 import android.app.Fragment;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -17,15 +16,12 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 import noskurt.com.hasilat.R;
-import noskurt.com.hasilat.news.RecyclerViewAdapter;
+import noskurt.com.hasilat.distributors.DistributorsFragmentView;
 import noskurt.com.hasilat.ygznsl.HtmlTable;
-import noskurt.com.hasilat.ygznsl.HtmlTableRow;
 import noskurt.com.hasilat.ygznsl.Obtain;
 
-public class WeeklyFragmentView extends Fragment {
+public class StudiosFragmentView extends Fragment {
 
     private Spinner spinner;
     private TableLayout tableLayout;
@@ -40,12 +36,12 @@ public class WeeklyFragmentView extends Fragment {
 
         if (container != null) container.removeAllViews();
 
-        view = inflater.inflate(R.layout.weekly_layout, container, false);
+        view = inflater.inflate(R.layout.studios_layout, container, false);
 
-        tableLayout = (TableLayout) view.findViewById(R.id.weeklyTableLayout);
-        progressBar = (ProgressBar) view.findViewById(R.id.weeklyProgress);
+        tableLayout = (TableLayout) view.findViewById(R.id.studTableLayout);
+        progressBar = (ProgressBar) view.findViewById(R.id.studProgress);
 
-        spinner = (Spinner) view.findViewById(R.id.weeklySpinner);
+        spinner = (Spinner) view.findViewById(R.id.studSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(view.getContext(),
                 R.array.years, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -80,8 +76,8 @@ public class WeeklyFragmentView extends Fragment {
             Integer result = 0;
 
             try {
-                String URL = String.format(getResources().getString(R.string.weekly_url), Integer.valueOf(strings[0]));
-                table = Obtain.obtainTable(getResources().getString(R.string.weekly_table_selector), URL);
+                String URL = String.format(getResources().getString(R.string.studios_url), Integer.valueOf(strings[0]));
+                table = Obtain.obtainTable(getResources().getString(R.string.studios_table_selector), URL);
                 result = 1;
             } catch (Exception e) {
                 e.printStackTrace();
@@ -98,10 +94,12 @@ public class WeeklyFragmentView extends Fragment {
                 for (int j = 0; j < table.size(); j++) {
                     TableRow tableRow = new TableRow(view.getContext());
 
-                    for (int i = 0; i < table.get(j).size(); i++) {
+                    for (int i = 0; i < 3; i++) {
                         TextView textView = new TextView(view.getContext());
 
-                        textView.setText(table.get(j).get(i).text());
+                        if (i == 2) textView.setText(table.get(j).get(4).text());
+                        else textView.setText(table.get(j).get(i).text());
+
                         if (j % 2 == 0) textView.setBackground(getResources().getDrawable(R.drawable.blue_cell_shape, null));
                         else textView.setBackground(getResources().getDrawable(R.drawable.lightgrey_cell_shape, null));
                         textView.setGravity(Gravity.CENTER);
@@ -116,4 +114,5 @@ public class WeeklyFragmentView extends Fragment {
             }
         }
     }
+
 }

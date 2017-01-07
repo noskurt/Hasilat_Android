@@ -14,8 +14,10 @@ import android.support.design.widget.NavigationView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import noskurt.com.hasilat.distributors.DistributorsFragmentView;
 import noskurt.com.hasilat.news.NewsFragmentView;
 import noskurt.com.hasilat.release.ReleaseDateView;
+import noskurt.com.hasilat.studios.StudiosFragmentView;
 import noskurt.com.hasilat.weekly.WeeklyFragmentView;
 
 public class MainActivity extends AppCompatActivity
@@ -56,11 +58,17 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_haberler) {
             NewsFragmentView fragment = new NewsFragmentView();
             changeFragment(fragment);
-        } else if (id == R.id.nav_vizyon){
+        } else if (id == R.id.nav_vizyon) {
             ReleaseDateView fragment = new ReleaseDateView();
             changeFragment(fragment);
         } else if (id == R.id.nav_haftalik) {
             WeeklyFragmentView fragment = new WeeklyFragmentView();
+            changeFragment(fragment);
+        } else if (id == R.id.nav_dagitim) {
+            DistributorsFragmentView fragment = new DistributorsFragmentView();
+            changeFragment(fragment);
+        } else if (id == R.id.nav_studyo){
+            StudiosFragmentView fragment = new StudiosFragmentView();
             changeFragment(fragment);
         } else if (id == R.id.nav_about) {
             aboutUsAlert();
@@ -78,7 +86,7 @@ public class MainActivity extends AppCompatActivity
         fragmentTransaction.commit();
     }
 
-    private void aboutUsAlert(){
+    private void aboutUsAlert() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("HAKKIMIZDA");
         builder.setMessage(R.string.about_us);
