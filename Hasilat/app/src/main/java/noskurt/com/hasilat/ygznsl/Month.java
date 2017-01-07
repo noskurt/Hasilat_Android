@@ -22,7 +22,7 @@ public enum Month {
         this.value = value;
         this.name = name;
     }
-    
+
     public int value() { return value; }
 
     public String getName() { return name; }

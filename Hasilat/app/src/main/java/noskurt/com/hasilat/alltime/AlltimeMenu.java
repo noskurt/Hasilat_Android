@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
 import noskurt.com.hasilat.R;
 
 public class AlltimeMenu extends Fragment{

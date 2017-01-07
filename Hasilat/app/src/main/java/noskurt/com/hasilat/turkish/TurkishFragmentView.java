@@ -15,9 +15,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import noskurt.com.hasilat.R;
-import noskurt.com.hasilat.yearly.YearlyFragmentView;
 import noskurt.com.hasilat.ygznsl.HtmlTable;
 import noskurt.com.hasilat.ygznsl.Obtain;
 

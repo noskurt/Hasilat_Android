@@ -1,9 +1,8 @@
-package noskurt.com.hasilat.release;
+package noskurt.com.hasilat.ygznsl.release;
 
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
-
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.LinkedList;
@@ -42,7 +40,7 @@ public class ReleaseDateView extends Fragment {
         progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
 
         final LinkedList<String> years = new LinkedList<>(Arrays.asList("Yıl seçiniz"));
-        for (int i = Calendar.getInstance().get(Calendar.YEAR) + 2; i > 2004 ; i--) years.add("" + i);
+        for (int i = Calendar.getInstance().get(Calendar.YEAR) + 1; i > 2004 ; i--) years.add("" + i);
         spinnerYear.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, years));
 
         final LinkedList<String> months = new LinkedList<>(Arrays.asList("Ay seçiniz"));

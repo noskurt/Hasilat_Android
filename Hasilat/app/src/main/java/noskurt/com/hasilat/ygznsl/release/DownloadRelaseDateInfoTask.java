@@ -1,4 +1,4 @@
-package noskurt.com.hasilat.release;
+package noskurt.com.hasilat.ygznsl.release;
 
 import android.content.Context;
 import android.os.AsyncTask;

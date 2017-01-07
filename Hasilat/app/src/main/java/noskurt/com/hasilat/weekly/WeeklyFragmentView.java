@@ -1,7 +1,6 @@
 package noskurt.com.hasilat.weekly;
 
 import android.app.Fragment;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -16,13 +15,8 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
-
 import noskurt.com.hasilat.R;
-import noskurt.com.hasilat.news.RecyclerViewAdapter;
 import noskurt.com.hasilat.ygznsl.HtmlTable;
-import noskurt.com.hasilat.ygznsl.HtmlTableRow;
 import noskurt.com.hasilat.ygznsl.Obtain;
 
 public class WeeklyFragmentView extends Fragment {

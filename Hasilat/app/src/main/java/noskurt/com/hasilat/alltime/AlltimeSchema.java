@@ -7,18 +7,12 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import noskurt.com.hasilat.R;
-import noskurt.com.hasilat.turkish.TurkishFragmentView;
 import noskurt.com.hasilat.ygznsl.HtmlTable;
 import noskurt.com.hasilat.ygznsl.Obtain;
 

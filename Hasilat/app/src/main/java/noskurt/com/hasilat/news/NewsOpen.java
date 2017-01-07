@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.squareup.picasso.Picasso;
-
 import noskurt.com.hasilat.R;
 
 public class NewsOpen extends AppCompatActivity {

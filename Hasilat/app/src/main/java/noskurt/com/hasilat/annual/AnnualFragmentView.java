@@ -1,4 +1,4 @@
-package noskurt.com.hasilat.yearly;
+package noskurt.com.hasilat.annual;
 
 import android.app.Fragment;
 import android.os.AsyncTask;
@@ -15,13 +15,11 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import noskurt.com.hasilat.R;
-import noskurt.com.hasilat.weekly.WeeklyFragmentView;
 import noskurt.com.hasilat.ygznsl.HtmlTable;
 import noskurt.com.hasilat.ygznsl.Obtain;
 
-public class YearlyFragmentView extends Fragment {
+public class AnnualFragmentView extends Fragment {
 
     private Spinner spinner;
     private TableLayout tableLayout;

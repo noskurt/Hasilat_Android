@@ -1,7 +1,6 @@
 
 package noskurt.com.hasilat.ygznsl;
 
-import android.content.Context;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Iterator;
