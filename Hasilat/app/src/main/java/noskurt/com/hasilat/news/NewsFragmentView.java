@@ -121,7 +121,7 @@ public class NewsFragmentView extends Fragment {
                 adapter = new RecyclerViewAdapter(view.getContext(), feedsList);
                 mRecyclerView.setAdapter(adapter);
             } else {
-                Toast.makeText(getContext(), "Failed to fetch data!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(view.getContext(), "Failed to fetch data!", Toast.LENGTH_SHORT).show();
             }
         }
     }
