@@ -15,6 +15,11 @@ import android.support.design.widget.NavigationView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+
 import noskurt.com.hasilat.alltime.AlltimeFragmentView;
 import noskurt.com.hasilat.distributors.DistributorsFragmentView;
 import noskurt.com.hasilat.news.NewsFragmentView;
@@ -27,10 +32,29 @@ import noskurt.com.hasilat.annual.AnnualFragmentView;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private AdView bannerAd;
+    private InterstitialAd interstitialAd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawer_main);
+
+        MobileAds.initialize(this, "ca-app-pub-1213680459136295~4639518763");
+
+        bannerAd = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest
+                .Builder()
+                .addTestDevice("D51F472EA096AF4097F6F85D66559434")
+                .build();
+        bannerAd.loadAd(adRequest);
+
+        interstitialAd = new InterstitialAd(this);
+        interstitialAd.setAdUnitId("ca-app-pub-1213680459136295/5311794179");
+        AdRequest request = new AdRequest.Builder()
+                .addTestDevice("D51F472EA096AF4097F6F85D66559434")
+                .build();
+        interstitialAd.loadAd(request);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -65,6 +89,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_haberler) {
             NewsFragmentView fragment = new NewsFragmentView();
             changeFragment(fragment);
+            if (interstitialAd.isLoaded()) interstitialAd.show();
         } else if (id == R.id.nav_vizyon) {
             ReleaseDateView fragment = new ReleaseDateView();
             changeFragment(fragment);

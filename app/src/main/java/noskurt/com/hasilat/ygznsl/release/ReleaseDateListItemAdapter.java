@@ -47,7 +47,8 @@ public class ReleaseDateListItemAdapter extends ArrayAdapter<Movie> {
         final TextView txtGenre = (TextView) row.findViewById(R.id.txtGenre);
         final ImageView imgMovie = (ImageView) row.findViewById(R.id.imgMovie);
 
-        final SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy, EEEE", Locale.forLanguageTag("tr-TR"));
+        final Locale locale = new Locale("tr","TR", "");
+        final SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy, EEEE", locale);
         txtReleaseDate.setText(sdf.format(movie.getReleaseDate().getTime()));
         txtName.setText(movie.getName());
         txtGenre.setText(movie.getGenre());

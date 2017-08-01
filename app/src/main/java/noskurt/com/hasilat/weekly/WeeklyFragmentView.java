@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.content.res.ResourcesCompat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -102,8 +103,8 @@ public class WeeklyFragmentView extends Fragment {
                         TextView textView = new TextView(view.getContext());
 
                         textView.setText(table.get(j).get(i).text());
-                        if (j % 2 == 0) textView.setBackground(getResources().getDrawable(R.drawable.blue_cell_shape, null));
-                        else textView.setBackground(getResources().getDrawable(R.drawable.lightgrey_cell_shape, null));
+                        if (j % 2 == 0) textView.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.blue_cell_shape, null));
+                        else textView.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.lightgrey_cell_shape, null));
                         textView.setGravity(Gravity.CENTER);
                         textView.setPadding(10, 10, 10, 10);
 
