@@ -19,14 +19,14 @@ Finally, this application displays the latest news about movies.
 
 ### Major Features
 These are the features of this application:
-*	“Haberler”
-*	“Vizyon Takvimi”
-*	“Haftalık İstatistikler”
-*	“Yıllık İstatistikler”
-*	“Türk Filmleri ile ilgili İstatistikleri”
-*	“Dağıtımcılar ile ilgili İstatistikler”
-*	“Film Stüdyoları ile ilgili İstatistikler”
-*	“Tüm Zamanlar ile ilgili İstatistikler”
+*	“Haberler” ~ "News"
+*	“Vizyon Takvimi” ~ "Vision Calendar"
+*	“Haftalık İstatistikler” ~ "Weekly Statistics"
+*	“Yıllık İstatistikler” ~ "Yearly Statistics"
+*	“Türk Filmleri ile ilgili İstatistikleri” ~ "Statistics on Turkish Films"
+*	“Dağıtımcılar ile ilgili İstatistikler” ~ "Statistics about Distributors"
+*	“Film Stüdyoları ile ilgili İstatistikler” ~ Stats about Movie Studios"
+*	“Tüm Zamanlar ile ilgili İstatistikler” ~ "All time Statistics" 
 
 ### Operating Environment
 This application is built to run on Android devices that has (at minimum) Android 5.0 Lollipop (API 21).
